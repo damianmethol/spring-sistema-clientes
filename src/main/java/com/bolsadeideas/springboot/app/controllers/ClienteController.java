@@ -214,7 +214,9 @@ public class ClienteController {
 			cliente.setFoto(uniqueFilename);
 		}
 
-		String mensajeFlash = (cliente.getId() != null) ? messageSource.getMessage("text.cliente.flash.editar.success", null, locale) : messageSource.getMessage("text.cliente.flash.crear.success", null, locale);
+		String mensajeFlash = (cliente.getId() != null) 
+				? messageSource.getMessage("text.cliente.flash.editar.success", null, locale) 
+						: messageSource.getMessage("text.cliente.flash.crear.success", null, locale);
 
 		clienteService.save(cliente);
 		status.setComplete();
